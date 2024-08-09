@@ -23,7 +23,7 @@
               <div class="flex w-[90%] justify-center">
                 <BaseButton size="medium"
                   :type="`${row[column.key] === 'Available' || row[column.key] === 'Paid' || row[column.key] === 'Active' ? 'status-available' : 'status-rented'}`"
-                  class="bg-light-danger" @click="logStatus(row)">
+                  class="bg-light-danger">
                   {{ row[column.key] }}
                 </BaseButton>
               </div>
@@ -80,10 +80,6 @@ const getActionType = (value) => {
   return props.actionType;
 }
 
-function logStatus(value) {
-  console.log('Status value:', value);
-}
-
 const getButtonType = (value) => {
   if (value === 'Available') {
     return 'status-available';
@@ -95,9 +91,6 @@ const getButtonType = (value) => {
 
 const getTdClasses = (row, column) => {
   const classes = [['status-available', 'status-rented'].includes(getButtonType(row[column.key])) || ['price', 'status'].includes(column.key) ? 'flex justify-center' : '', `text-${column.align || 'center'}`];
-
-  console.log(classes, 'seeeeeeeeeeee');
-
   return classes;
 };
 
