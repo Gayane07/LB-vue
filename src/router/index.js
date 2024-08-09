@@ -5,6 +5,8 @@ import Dashboard1 from '@/pages/Dashboard.vue'
 import Apartments1 from '@/pages/Apartments.vue'
 import RentedRooms1 from '@/pages/RentedRooms.vue'
 import MyCalendar1 from '@/pages/MyCalendar.vue'
+import Generator from '@/pages/Generator.vue'
+import Maintenance from '@/pages/Maintenance.vue'
 
 const routes = [
   { path: '/', component: Dashboard1 },
@@ -13,6 +15,8 @@ const routes = [
   { path: '/calendar', component: MyCalendar1 },
   { path: '/expenses', component: Expenses },
   { path: '/employees', component: Employees },
+  { path: '/generator', component: Generator },
+  { path: '/maintenance', component: Maintenance },
 ];
 
 const router = createRouter({

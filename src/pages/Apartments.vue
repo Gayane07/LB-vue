@@ -1,5 +1,5 @@
 <script setup>
-import { ref } from 'vue';
+import { reactive } from 'vue';
 import BaseButton from '@/components/BaseButton.vue';
 import AddIcon from '@/components/icons/AddIcon.vue';
 import SubHeaderContent from '@/components/SubHeaderContent.vue'
@@ -15,7 +15,7 @@ const handleClick = () => {
   console.log('Button clicked!');
 };
 
-const columns = ref([
+const columns = reactive([
   { key: 'image', label: '', type: 'image' },
   { key: 'building', label: 'Building' },
   { key: 'name', label: 'Name' },

@@ -5,13 +5,13 @@
 </template>
 
 <script setup>
-import { ref } from 'vue';
+import { reactive } from 'vue';
 import { Bar } from 'vue-chartjs';
 import { Chart as ChartJS, Title, Tooltip, Legend, BarElement, CategoryScale, LinearScale } from 'chart.js';
 
 ChartJS.register(Title, Tooltip, Legend, BarElement, CategoryScale, LinearScale);
 
-const chartData = ref({
+const chartData = reactive({
     labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
     datasets: [
         {
@@ -30,7 +30,7 @@ const chartData = ref({
     ]
 });
 
-const chartOptions = ref({
+const chartOptions = reactive({
     responsive: true,
     plugins: {
         legend: {

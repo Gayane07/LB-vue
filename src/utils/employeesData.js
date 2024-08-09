@@ -13,7 +13,7 @@ export const employeesData = [
         position: 'A121',
         startDate: '01/01/2024',
         monthSalary: '1000',
-        status: 'Active'
+        status: 'Exempted'
     },
     {
         name: 'Jane Cooper',
@@ -37,6 +37,6 @@ export const employeesData = [
         position: 'A121',
         startDate: '01/01/2024',
         monthSalary: '1000',
-        status: 'Active'
+        status: 'Exempted'
     }
 ]

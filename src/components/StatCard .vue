@@ -45,11 +45,11 @@ const props = defineProps({
     },
     isSecondary: {
         type: Boolean,
-        required: true
+        default: false
     },
     isDanger: {
         type: Boolean,
-        required: true
+        default: false
     }
 });
 

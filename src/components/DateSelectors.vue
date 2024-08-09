@@ -14,10 +14,10 @@
   </template>
   
   <script setup>
-  import { ref } from 'vue';
+  import { ref, reactive } from 'vue';
   import BaseSelect from '@/components/BaseSelect.vue';
   
-  const years = ref([
+  const years = reactive([
     { value: '2020', label: '2020' },
     { value: '2021', label: '2021' },
     { value: '2022', label: '2022' },
@@ -25,7 +25,7 @@
     { value: '2024', label: '2024' }
   ]);
   
-  const months = ref([
+  const months = reactive([
     { value: '01', label: 'January' },
     { value: '02', label: 'February' },
     { value: '03', label: 'March' },

@@ -93,24 +93,24 @@ const statusIconColor = computed(() => {
 }
 
 .btn-actions-edit {
-    @apply  bg-[#E4E4E4] text-primary;
+    @apply  bg-grey text-primary;
 }
 
 .btn-status-available {
-    @apply  bg-[#94CD64] py-[14px] px-[24px]  rounded-[50px] text-primary bg-opacity-10 text-[15px] font-[600] leading-[18.29px]  w-full justify-center gap-[10px];
+    @apply  bg-[#94CD64] py-[14px] px-[24px]  rounded-[50px] text-primary bg-opacity-10 text-[15px] font-[600] leading-[18.29px]  w-full flex justify-center gap-[10px];
 }
 
 .btn-status-rented {
-    @apply  bg-light-danger py-[14px] px-[24px]  rounded-[50px] text-danger text-[15px] font-[600] leading-[18.29px]  w-full justify-center gap-[10px];
+    @apply  bg-light-danger py-[14px] px-[24px]  rounded-[50px] text-danger text-[15px] font-[600] leading-[18.29px]  w-full flex justify-center gap-[10px];
 }
 
 .btn-status-price {
-    @apply text-[14px] font-[600] leading-[17.07px] px-[12px] py-[4px] w-full justify-center gap-[10px];
+    @apply text-[14px] font-[600] leading-[17.07px] px-[12px] py-[4px] w-full flex justify-center gap-[10px];
 }
 
 
 .btn-actions-edit {
-    @apply  bg-[#E4E4E4] text-secondary px-[24px] py-[12px] rounded-[50px] text-[15px] font-[600] leading-[18.29px] w-[80%] flex justify-center gap-[10px];
+    @apply  bg-grey text-secondary px-[24px] py-[12px] rounded-[50px] text-[15px] font-[600] leading-[18.29px] w-[80%] flex justify-center gap-[10px];
 }
 
 .btn-actions-mark {

@@ -1,5 +1,5 @@
 <script setup>
-import { ref } from 'vue';
+import { reactive } from 'vue';
 import BaseButton from '@/components/BaseButton.vue';
 import BaseSelect from '@/components/BaseSelect.vue';
 import AddIcon from '@/components/icons/AddIcon.vue';
@@ -10,7 +10,7 @@ import { employeesData } from '@/utils/employeesData';
 import DeleteIcon from '@/components/icons/DeleteIcon.vue';
 import EditIcon from '@/components/icons/EditIcon.vue';
 
-const columns = ref([
+const columns = reactive([
   { key: 'name', label: 'Employee Name' },
   { key: 'phoneNumber', label: 'Phone Number' },
   { key: 'position', label: 'Position' },
@@ -48,7 +48,6 @@ const buttons = ["Employees", "Absence", "Salary"];
         Add
       </BaseButton>
     </div>
-
     <BaseTable :columns="columns" :data="employeesData" :iconList="iconList" actionType="action" />
   </div>
 </template>

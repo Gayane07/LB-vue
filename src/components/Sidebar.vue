@@ -1,13 +1,12 @@
 <script setup>
 import { links } from '@/utils/sideBarItems';
-import { reactive } from 'vue'
+import { shallowRef } from 'vue'
 import logoIcon from './icons/logoIcon.vue';
 import { useRoute } from 'vue-router';
 
-const sidebarItems = reactive(links);
+const sidebarItems = shallowRef(links);
 const route = useRoute();
 </script>
-
 
 <template>
     <aside class="bg-secondary text-white p-4 justify-self-start h-auto">

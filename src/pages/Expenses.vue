@@ -1,5 +1,5 @@
 <script setup>
-import { ref } from 'vue';
+import { reactive } from 'vue';
 import BaseButton from '@/components/BaseButton.vue';
 import BaseSelect from '@/components/BaseSelect.vue';
 import ExpensesCard from '@/components/ExpensesCard.vue';
@@ -13,7 +13,7 @@ import Sort from '@/components/icons/Sort.vue';
 import EditIcon2 from '@/components/icons/EditIcon2.vue';
 import MarkIcon from '@/components/icons/MarkIcon.vue';
 
-const columns = ref([
+const columns = reactive([
   { key: 'date', label: 'Date', icon: Sort },
   { key: 'amount', label: 'Amount' },
   { key: 'dateValue', label: 'Date' },

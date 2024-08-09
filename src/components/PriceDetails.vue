@@ -12,8 +12,8 @@ const statusClass = props.type === 'Paid' ? 'status-available' : 'status-rented'
 </script>
 
 <template>
-    <div class="flex flex-col items-center  gap-y-[9px] w-fit">
-        <div class="flex justify-between gap-[30px]">
+    <div class="flex flex-col items-center  gap-y-[9px] w-[70%]">
+        <div class="flex justify-between gap-[30px] w-full">
             <div class="flex flex-col items-start gap-[4px]">
                 <div class="text-[12px] font-[500] leading-[14.63px]">February rent</div>
                 <div class="flex justify-start items-center gap-[10px]">

@@ -49,11 +49,3 @@
   });
   
   </script>
-
-
-<style scoped>
-select > option { 
-padding: 10px;
-}
-</style>
-  

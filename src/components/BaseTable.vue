@@ -1,19 +1,19 @@
 <template>
   <div class="bg-white py-[10px] px-[20px] rounded-[24px]">
-    <table class="min-w-full divide-y divide-[#E4E4E4]">
+    <table class="min-w-full divide-y divide-grey" :class="className">
       <thead class="bg-white">
         <tr>
-          <th v-for="column in columns" :key="column.key" class="font-[600] text-secondary tracking-wider">
+          <th v-for="column in columns" :key="column.key" class="font-[600] text-secondary tracking-wider"
+            :class="`text-${column.align || 'center'}`">
             <span>{{ column.label }}</span>
             <component v-if="column.icon" :is="column.icon" class="inline-block ml-2" />
           </th>
         </tr>
       </thead>
-      <tbody class="bg-white divide-y divide-[#E4E4E4]">
+      <tbody class="bg-white divide-y divide-grey divide-grey">
         <tr v-for="(row, rowIndex) in data" :key="rowIndex" class="px-[20px] py-[19px]">
           <td v-for="column in columns" :key="column.key" class="whitespace-nowrap  font-[500]"
-            :class="[
-              getButtonType(row[column.key]) === 'status-available' || getButtonType(row[column.key]) === 'status-rented' || column.key === 'price' || column.key === 'status' ? 'flex justify-center' : '']">
+            :class="getTdClasses(row, column)">
             <template v-if="column.type === 'image'">
               <img :src="`/src/assets/images/${row[column.key]}`" alt=""
                 class="w-[80px] h-auto object-cover rounded-md" />
@@ -22,10 +22,10 @@
             <template v-else-if="column.key === 'status'" class="flex justify-center">
               <div class="flex w-[90%] justify-center">
                 <BaseButton size="medium"
-                :type="`${row[column.key] === 'Available' || row[column.key] === 'Paid' || row[column.key] === 'Active' ? 'status-available' : 'status-rented'}`"
-                class="bg-light-danger" @click="logStatus(row)">
-                {{ row[column.key] }}
-              </BaseButton>
+                  :type="`${row[column.key] === 'Available' || row[column.key] === 'Paid' || row[column.key] === 'Active' ? 'status-available' : 'status-rented'}`"
+                  class="bg-light-danger" @click="logStatus(row)">
+                  {{ row[column.key] }}
+                </BaseButton>
               </div>
             </template>
             <template v-else-if="column.key === 'price'" class="flex justify-center">
@@ -52,8 +52,9 @@ import PriceDetails from './PriceDetails.vue';
 interface Column {
   key: string;
   label: string;
-  type: string;
-  icon: string | null;
+  type?: string;
+  icon?: string | null;
+  align?: string;
 }
 
 interface Icon {
@@ -66,8 +67,9 @@ interface Icon {
 const props = defineProps<{
   columns: Column[];
   data: Record<string, any>[];
-  iconList: Icon[];
-  actionType: string
+  iconList?: Icon[];
+  actionType?: string,
+  className?: string
 }>();
 
 const getActionType = (value) => {
@@ -76,7 +78,6 @@ const getActionType = (value) => {
   }
 
   return props.actionType;
-
 }
 
 function logStatus(value) {
@@ -92,6 +93,14 @@ const getButtonType = (value) => {
   return 'default';
 };
 
+const getTdClasses = (row, column) => {
+  const classes = [['status-available', 'status-rented'].includes(getButtonType(row[column.key])) || ['price', 'status'].includes(column.key) ? 'flex justify-center' : '', `text-${column.align || 'center'}`];
+
+  console.log(classes, 'seeeeeeeeeeee');
+
+  return classes;
+};
+
 </script>
 
 <style scoped>
@@ -100,11 +109,11 @@ table {
 }
 
 th {
-  @apply px-[20px] py-[16px] text-[18px] text-center leading-21.94;
+  @apply px-[20px] py-[16px] text-[18px] leading-21.94;
 }
 
 td {
-  @apply px-[12px] py-[16px] text-[18px] text-center leading-21.94;
+  @apply px-[12px] py-[16px] text-[18px] leading-21.94;
 }
 
 table {
@@ -120,10 +129,10 @@ table tr:last-child td:first-child {
 }
 
 table tr:first-child th:first-child {
-  border-top-left-radius: 10px
+  border-top-left-radius: 10px;
 }
 
 table tr:first-child th:last-child {
-  border-top-right-radius: 10px
+  border-top-right-radius: 10px;
 }
 </style>

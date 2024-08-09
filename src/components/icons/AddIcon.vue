@@ -6,5 +6,4 @@
         <path d="M15.3 12H12M12 12H8.70001M12 12V8.70001M12 12V15.3" stroke="white" stroke-width="1.5"
             stroke-linecap="round" />
     </svg>
-
 </template>
